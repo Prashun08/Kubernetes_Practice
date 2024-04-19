@@ -1,1 +1,1 @@
-# Kubernetes_practice
+<h3>Hello, Here we are practicing our Kubernetes concepts on AWS Elastic Kubernetes Service!</h3>
