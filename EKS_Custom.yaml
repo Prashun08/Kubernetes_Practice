@@ -13,3 +13,4 @@ managedNodeGroups:
     desiredCapacity: 2
     ssh:
       allow: true
+    
