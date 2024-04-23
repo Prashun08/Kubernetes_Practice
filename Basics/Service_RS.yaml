@@ -5,9 +5,9 @@ metadata:
 spec:
   type: NodePort
   selector:
-    rs: frontend
+    app: custom-nginx
   ports:
   - name: httpd
-    port: 80
-    targetPort: 80
-    nodePort: 31000
+    port: 80 # Service Port
+    targetPort: 80 # Port of the Backend Pod
+    nodePort: 31000 # Port of the Worker Node
