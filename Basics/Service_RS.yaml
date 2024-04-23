@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata: 
+  name: service-rs
+spec:
+  type: NodePort
+  selector:
+    rs: frontend
+  ports:
+  - name: httpd
+    port: 80
+    targetPort: 80
+    nodePort: 31000
