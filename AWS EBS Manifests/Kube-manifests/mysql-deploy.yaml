@@ -15,12 +15,20 @@ spec:
       labels: 
         app: mysql
     spec: 
+      initContainers:
+      - name: init-sql
+        image: busybox:1.31
+        command: ['sh', '-c', 'echo -e "Checking for the availability of MySQL Server deployment"; while ! nc -z mysql 3306; do sleep 1; printf "-"; done; echo -e "  >> MySQL DB Server has started";']
+
       containers:
         - name: mysql
           image: mysql:5.6
           env:
             - name: MYSQL_ROOT_PASSWORD
-              value: root
+              valueFrom:
+                secretKeyRef:
+                  name: my-secret
+                  key: dbpass
           ports:
             - containerPort: 3306
               name: mysql    
