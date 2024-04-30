@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mysql
+spec:
+  type: ExternalName
+  externalName: usermgmtdb.cdowgswi6n46.us-east-1.rds.amazonaws.com # Replace it with your own RDS
